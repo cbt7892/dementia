@@ -3,6 +3,8 @@ from sklearn import svm
 from sklearn import metrics
 from sklearn.preprocessing import StandardScaler
 
+input_array = []  # get from features.py
+
 # load data
 data_set = np.genfromtxt("feature_set_dem.csv", delimiter=",")
 data_set = data_set[1:]  # remove label row
@@ -29,5 +31,5 @@ clf = svm.SVC(kernel="linear")
 clf.fit(x_train, y_train)
 
 # evaluate model
-print(metrics.accuracy_score(y_test, clf.predict(x_test)))
+clf.predict(input_array)
 
